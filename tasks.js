@@ -41,6 +41,8 @@ function onDataReceived(text) {
     hello(text.trim().substring(5));
   }else if (text==='help\n'){
     Help();
+  }else if (text==='list\n'){
+    List();
   }
   else{
     unknownCommand(text);
@@ -82,11 +84,19 @@ function quit(){
 
 /**
 *this function prints the comands with the description 
-*@returns {void}
+*@returns {void}  
 */
 function Help (){
   console.log('hello YourName /saying hello name of user.\n quit or exit /to end the application.\n  help / to show the comands. ')
 
+}
+
+
+var list= new Array("task1","task2","task3");
+function List(){
+  console.log(
+    list.map((tasks,key) => `${key+1} - ${tasks} `).join("\n")
+  )
 }
 // The following line starts the application
 startApp("Yehia Masri")
