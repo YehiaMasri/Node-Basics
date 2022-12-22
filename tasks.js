@@ -39,6 +39,8 @@ function onDataReceived(text) {
   }
   else if(text === 'hello\n'){
     hello();
+  }else if (text==='help\n'){
+    list();
   }
   else{
     unknownCommand(text);
@@ -77,6 +79,9 @@ function quit(){
   console.log('Quitting now, goodbye!')
   process.exit();
 }
+function list (){
+  console.log('hello  /to greeting user.\n quit or exit /to end the application.\n  help / to show the comands. ')
 
+}
 // The following line starts the application
 startApp("Yehia Masri")
