@@ -40,7 +40,7 @@ function onDataReceived(text) {
   else if(text.trim().split(" ")[0]==="hello"){
     hello(text.trim().substring(5));
   }else if (text==='help\n'){
-    list();
+    Help();
   }
   else{
     unknownCommand(text);
@@ -84,8 +84,8 @@ function quit(){
 *this function prints the comands with the description 
 *@returns {void}
 */
-function list (){
-  console.log('hello  /to greeting user.\n quit or exit /to end the application.\n  help / to show the comands. ')
+function Help (){
+  console.log('hello YourName /saying hello name of user.\n quit or exit /to end the application.\n  help / to show the comands. ')
 
 }
 // The following line starts the application
