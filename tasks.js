@@ -43,6 +43,8 @@ function onDataReceived(text) {
     Help();
   }else if (text==='list\n'){
     List();
+  }else if(text.trim().split(" ")[0]=== "add"){
+    Add(text.trim().substring(4));
   }
   else{
     unknownCommand(text);
@@ -97,6 +99,13 @@ function List(){
   console.log(
     list.map((tasks,key) => `${key+1} - ${tasks} `).join("\n")
   )
+}
+
+function Add (text){
+  if(text==" "){
+    console.log("you didn't add anything"); 
+  }
+  list.push(text);
 }
 // The following line starts the application
 startApp("Yehia Masri")
