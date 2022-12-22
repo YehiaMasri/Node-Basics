@@ -79,6 +79,11 @@ function quit(){
   console.log('Quitting now, goodbye!')
   process.exit();
 }
+
+/**
+*this function prints the comands with the description 
+*@returns {void}
+*/
 function list (){
   console.log('hello  /to greeting user.\n quit or exit /to end the application.\n  help / to show the comands. ')
 
