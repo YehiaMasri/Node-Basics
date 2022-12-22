@@ -91,7 +91,7 @@ function quit(){
 *@returns {void}  
 */
 function Help (){
-  console.log('hello YourName /saying hello name of user.\n quit or exit /to end the application.\n  help / to show the comands. ')
+  console.log('hello YourName /saying hello name of user.\n quit or exit /to end the application.\n  help / to show the comands.\n  remove / to delet the last task. \n remove 1 /to delete the first task. \n remove 2 /to delete the second task. ')
 
 }
 
