@@ -47,11 +47,13 @@ function onDataReceived(text) {
     Add(text);
   }else if(text==="remove\n"){
     list.pop();
-
-
   }
     else if (text.startsWith('remove')){
     Remove(text.slice(6, text.length-1));
+  }else if(text==='edit\n'){
+    edit(text);
+  }else if(text==='edit\n'){
+   edit(text);
   }
   else{
     unknownCommand(text);
@@ -130,6 +132,20 @@ function Remove(number){
     console.log('error')
   }
 }
+
+function edit (ed)  {
+  if (ed =="edit\n") {
+    console.log("error")
+}
+else {
+  let edi=ed.split(" ")[1]
+  if(!parseInt(edi)){
+    list[list.length-1]=ed.trim().replace("edit ","")
+  }
+  else{
+    list[edi-1]=ed.trim().replace(edit `${edi}`,"")
+  }
+}}
   
 // The following line starts the application
 startApp("Yehia Masri")
