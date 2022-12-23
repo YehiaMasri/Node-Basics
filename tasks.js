@@ -54,6 +54,10 @@ function onDataReceived(text) {
     edit(text);
   }else if(text==='edit\n'){
    edit(text);
+  }else if (text.startsWith("check")) {
+    check(text);
+  }else if (text.startsWith("uncheck")) {
+    uncheck(text);
   }
   else{
     unknownCommand(text);
@@ -146,5 +150,28 @@ else {
     list[edi-1]=ed.trim().replace(edit `${edi}`,"")
   }
 }}
+function check(arg) {
+  const myArray = arg.split(" ");
+  if (arg == "check") {
+    console.log('error commend not found')
+  }
+  else {
+    let pos = myArray[1] - 1;
+    let oldItem = (list[myArray[1] - 1]).substring(3);
+    list.splice(pos, 1, '[✓]' + oldItem);
+
+  }}
+
+  function uncheck(arg) {
+    const myArray = arg.split(" ");
+    if (arg == "uncheck") {
+      console.log('error commend not found')
+    }
+    else {
+      let pos = myArray[1] - 1;
+      let oldItem = (list[myArray[1] - 1]).substring(3);
+      list.splice(pos, 1, '[ ]' + oldItem);
+    }
+  }
 // The following line starts the application
 startApp("Yehia Masri")
