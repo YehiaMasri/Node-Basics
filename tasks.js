@@ -123,7 +123,10 @@ function Remove(number){
     list.pop()
   }else if(index>=1 && index<=list.length){
     list.splice(index-1, 1);
-  }else{
+  }else if (index>list.length){
+    console.log("dosen't exist");
+  }
+  else{
     console.log('error')
   }
 }
