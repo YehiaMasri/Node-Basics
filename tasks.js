@@ -85,7 +85,18 @@ function unknownCommand(c){
  function hello(text){
   console.log(`hello${text}!`);
 }
-
+const fs = require('fs');
+const { finished } = require('stream');
+function savedata (sav){
+   function finished(error){
+    if(error){
+      console.error(error);
+      return;
+    }
+   }
+  const jsonData=JSON.stringify(sav)
+  fs.writeFile('data.json',jsonData,finished)
+}
 
 /**
  * Exits the application
@@ -94,6 +105,7 @@ function unknownCommand(c){
  */
 function quit(){
   console.log('Quitting now, goodbye!')
+  savedata();
   process.exit();
 }
 
@@ -102,7 +114,7 @@ function quit(){
 *@returns {void}  
 */
 function Help (){
-  console.log('hello YourName /saying hello name of user.\n quit or exit /to end the application.\n  help / to show the comands.\n  remove / to delet the last task. \n remove 1 /to delete the first task. \n remove 2 /to delete the second task. check with the number / to checked the task \n uncheck with the number / to unchecked the task ')
+  console.log('hello YourName /saying hello name of user.\n quit or exit /to end the application.\n  help / to show the comands.\n  remove / to delet the last task. \n remove 1 /to delete the first task. \n remove 2 /to delete the second task. check with the number /to checked the task \n uncheck with the number / to unchecked the task ')
 
 }
 
