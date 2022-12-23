@@ -103,7 +103,7 @@ function Help (){
 }
 
 
-var list=Array("task1","task2","task3");
+var list=['[ ]get food','[ ]get a shawer','[✓]playing football','[ ]coding'];
 function List(){
   console.log(
     list.map((tasks,key) => `${key+1} - ${tasks} `).join("\n")
@@ -146,6 +146,5 @@ else {
     list[edi-1]=ed.trim().replace(edit `${edi}`,"")
   }
 }}
-  
 // The following line starts the application
 startApp("Yehia Masri")
