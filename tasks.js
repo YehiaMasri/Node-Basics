@@ -43,10 +43,15 @@ function onDataReceived(text) {
     Help();
   }else if (text==='list\n'){
     List();
-  }else if(text.trim().split(" ")[0]=== "add"){
-    Add(text.trim().substring(4));
-  }else if (text.trim().split(" ")[0]==="remove"){
-    Remove(text.trim().substring(6));
+  }else if(text.startsWith("add")){
+    Add(text);
+  }else if(text==="remove\n"){
+    list.pop();
+
+
+  }
+    else if (text.startsWith('remove')){
+    Remove(text.slice(6, text.length-1));
   }
   else{
     unknownCommand(text);
@@ -104,20 +109,24 @@ function List(){
 }
 
 function Add (text){
-  if(text==" "){
-    console.log("you didn't add anything"); 
-  }
-  list.push(text);
-}
+  if(text=="add\n"){
+    console.log(" error "); 
+  }else{
+    let x = text.trim().split(" ")[1];
+  list.push(x);
+}}
 
-function Remove(text){
-  if(text=="remove 1"){
-    list.splice(0,1);
-  }else if(text=='remove 2'){
-    list.splice(1,1);
-  }else if(text=='remove'){
-    list.pop();
+function Remove(number){
+  number=number.trim()
+  let index= parseInt(number);
+  if (!index && number!='0'){
+    list.pop()
+  }else if(index>=1 && index<=list.length){
+    list.splice(index-1, 1);
+  }else{
+    console.log('error')
   }
 }
+  
 // The following line starts the application
 startApp("Yehia Masri")
